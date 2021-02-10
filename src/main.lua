@@ -22,8 +22,8 @@ end
 
 function strbuffer:truncate(length)
 	length = length or 0
-	for i=length,self.n do
-		self.len = self.len - self[i]
+	for i=length+1,self.n do
+		self.len = self.len - #self[i]
 		self[i] = nil
 	end
 	self.n = length

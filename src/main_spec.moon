@@ -34,3 +34,8 @@ describe "string buffer", ->
 			buffer\append "word"
 			assert.equal "prefix word suffix", tostring("prefix" + buffer + "suffix")
 			assert.equal "word 1 2", tostring(buffer + "1" + "2")
+	
+	describe 'truncating', ->
+		it "should work on empty buffers", ->
+			assert.has.no.errors, ->
+				strbuffer!\truncate(0)
