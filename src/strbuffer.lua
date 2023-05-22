@@ -3,7 +3,7 @@
 -- @usage
 -- local strbuffer = requier 'strbuffer'
 -- local buf = strbuffer(", ")
--- buff:append("Hello", "World!")
+-- buff << "Hello" << "World!"
 -- print(buf)
 
 local strbuffer = {}
@@ -61,6 +61,7 @@ __meta = {
 	__tostring=strbuffer.concat;
 	__concat=combine;
 	__add=combine;
+	__shl=strbuffer.append;
 }
 
 return new

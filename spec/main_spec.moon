@@ -34,6 +34,10 @@ describe "string buffer", ->
 			buffer\append "word"
 			assert.equal "prefix word suffix", tostring("prefix" + buffer + "suffix")
 			assert.equal "word 1 2", tostring(buffer + "1" + "2")
+
+		it "should concatenate with <<", ->
+			buffer << "Hello" << "World"
+			assert.equal "Hello World", tostring(buffer)
 	
 	describe 'truncating', ->
 		it "should work on empty buffers", ->
