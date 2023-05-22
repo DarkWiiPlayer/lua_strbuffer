@@ -1,4 +1,4 @@
-strbuffer = require "main"
+strbuffer = require "strbuffer"
 
 describe "string buffer", ->
 	local buffer

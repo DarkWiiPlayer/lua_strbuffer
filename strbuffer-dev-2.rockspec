@@ -1,5 +1,5 @@
 package = "strbuffer"
-version = "dev-1"
+version = "dev-2"
 source = {
 	url = "git://github.com/DarkWiiPlayer/lua_strbuffer";
 }
@@ -17,6 +17,6 @@ dependencies = {
 build = {
 	type = "builtin";
 	modules = {
-		strbuffer = "src/main.lua"
+		strbuffer = "src/strbuffer.lua"
 	};
 }
