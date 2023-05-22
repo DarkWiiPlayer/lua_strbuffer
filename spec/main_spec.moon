@@ -25,12 +25,12 @@ describe "string buffer", ->
 		assert.equal buffer\concat!, "Hello World"
 	
 	describe "concatenation", ->
-		it "should work with ..", ->
+		it "should combine with ..", ->
 			buffer\append "word"
 			assert.equal "prefix word suffix", tostring("prefix"..buffer.."suffix")
 			assert.equal "word 12", tostring(buffer .. "1" .. "2")
 
-		it "should work with +", ->
+		it "should combine with +", ->
 			buffer\append "word"
 			assert.equal "prefix word suffix", tostring("prefix" + buffer + "suffix")
 			assert.equal "word 1 2", tostring(buffer + "1" + "2")
