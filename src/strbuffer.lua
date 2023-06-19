@@ -26,6 +26,16 @@ function strbuffer:append(str, ...)
 	return self
 end
 
+--- Helper that returns a partial application of the `append` function that doesn't require the `self` argument.
+-- Note: The created closure is cached internally so repeatedly calling this method in a hot loop should not break JIT.
+-- @treturn function Appender function for this buffer
+function strbuffer:appender()
+	self.__appender = self.__appender or function(...)
+		return self:append(...)
+	end
+	return self.__appender
+end
+
 -- Truncates a buffer to the first `length` strings.
 function strbuffer:truncate(length)
 	length = length or 0
